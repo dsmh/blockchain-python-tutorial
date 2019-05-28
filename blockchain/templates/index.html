@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blockchain Frontend</title>
+    <title>Interfaz Blockchain</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,19 +23,19 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Blockchain Frontend</a>
+        <a class="navbar-brand" href="#">Interfaz Blockchain</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Mine
+              <a class="nav-link" href="/">Minar
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/configure">Configure</a>
+              <a class="nav-link" href="/configure">Configurar</a>
             </li>
           </ul>
         </div>
@@ -48,7 +48,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="card-body">
-            <h4 class="card-title">Transactions to be added to the next block &nbsp;&nbsp;&nbsp;
+            <h4 class="card-title">Transacciones que serán añadidas al siguiente bloque &nbsp;&nbsp;&nbsp;
               <button type="submit" id="refresh_transactions" class="btn btn-sq-xs btn-primary">
                 <i class="fa fa-refresh"></i>
               </button>
@@ -65,7 +65,7 @@
       </table>
 
       <div class="col-lg-12 text-center">
-        <input type="button" id="mine_button" class="btn btn-primary btn-lg" value="Mine">
+        <input type="button" id="mine_button" class="btn btn-primary btn-lg" value="Minar">
       </div>
 
     </div>
@@ -77,7 +77,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="card-body">
-            <h4 class="card-title">Transactions on the Blockchain &nbsp;&nbsp;&nbsp;
+            <h4 class="card-title">Transacciones en la blockchain &nbsp;&nbsp;&nbsp;
               <button type="submit" id="refresh_blockchain" class="btn btn-sq-xs btn-primary">
                 <i class="fa fa-refresh"></i>
               </button>
@@ -129,9 +129,9 @@
               $('#unmined_transactions_table').dataTable( {
                 data: transactions,
                 columns: [{ title: "#" },
-                          { title: "Recipient Address"},
-                          { title: "Sender Address"},
-                          { title: "Value"}],
+                          { title: "Dirección del receptor"},
+                          { title: "Dirección del emisor"},
+                          { title: "Valor"}],
                 columnDefs: [ {targets: [1,2,3], render: $.fn.dataTable.render.ellipsis( 25 )}]
               } );
 
@@ -177,11 +177,11 @@
               $('#transactions_table').dataTable( {
                 data: transactions,
                 columns: [{ title: "#" },
-                          { title: "Recipient Address"},
-                          { title: "Sender Address"},
-                          { title: "Value"},
-                          { title: "Timestamp"},
-                          { title: "Block"}],
+                          { title: "Dirección del receptor"},
+                          { title: "Dirección del emisor"},
+                          { title: "Valor"},
+                          { title: "Marca de tiempo"},
+                          { title: "Bloque"}],
                 columnDefs: [ {targets: [1,2,3,4,5], render: $.fn.dataTable.render.ellipsis( 25 )}]
               } );
 
