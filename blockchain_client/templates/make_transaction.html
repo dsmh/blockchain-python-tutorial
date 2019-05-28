@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blockchain Client</title>
+    <title>G-pool Usuario</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,22 +21,22 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Blockchain Client</a>
+        <a class="navbar-brand" href="#">G-pool usuario</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Wallet Generator
+              <a class="nav-link" href="/">Generador de billetera
               </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/make/transaction">Make Transaction</a>
+              <a class="nav-link" href="/make/transaction">Hacer transacción</a>
               <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/view/transactions">View Transactions</a>
+              <a class="nav-link" href="/view/transactions">Ver transacciones</a>
             </li>
           </ul>
         </div>
@@ -49,8 +49,8 @@
         <div class="col-lg-12">
 
           <div class="card-body">
-            <h4 class="card-title">Send Coins</h4>
-            <p class="card-text">Enter transaction details and click on "Generate Transaction" button to generate your transaction</p>
+            <h4 class="card-title">Enviar monedas</h4>
+            <p class="card-text">Ingresar detalles de transacción y dar click en el botón "Generar Transacción" para generar tu transacción</p>
           </div>
 
         </div>
@@ -64,7 +64,7 @@
     <form id="transaction_form">
 
         <div class="row">
-          <label class="col-sm-2">Sender Address:</label>
+          <label class="col-sm-2">Dirección del emisor:</label>
           <div class="col-sm-10">
             <input type="text" name="sender_address" id="sender_address" rows="2" class="form-control">
 
@@ -74,7 +74,7 @@
         <br>
         
         <div class="row">
-          <label class="col-sm-2">Sender Private Key:</label>
+          <label class="col-sm-2">Llave privada del emisor:</label>
           <div class="col-sm-10">
             <input type="text" name="sender_private_key" id="sender_private_key" rows="2" class="form-control">
           </div>
@@ -83,7 +83,7 @@
         <br>
         
         <div class="row">
-          <label class="col-sm-2">Recipient Address:</label>
+          <label class="col-sm-2">Dirección del receptor:</label>
           <div class="col-sm-10">
             <input type="text" name="recipient_address" id="recipient_address" rows="2" class="form-control">
           </div>
@@ -92,7 +92,7 @@
         <br>
         
         <div class="row">
-          <label class="col-sm-2">Amount to Send:</label>
+          <label class="col-sm-2">Cantidad a enviar:</label>
           <div class="col-sm-10">
             <input type="text" name="amount" id="amount" rows="2" class="form-control">
           </div>
@@ -102,7 +102,7 @@
         
         <div class="row">
           <div class="col-lg-12 text-center">
-            <input type="button" id="generate_transaction" class="btn btn-primary btn-lg" value="Generate Transaction">
+            <input type="button" id="generate_transaction" class="btn btn-primary btn-lg" value="Generar Transacción">
           </div>
         </div>
 
@@ -119,7 +119,7 @@
         <div class="modal-content">
 
           <div class="modal-header">
-            <div class="modal-title col-md-10">Confirm transaction details, enter a blockchain node url and click on "Confirm Transaction" to finalize your transaction.</div>
+            <div class="modal-title col-md-10">Confirmar detalles de transacción, ingresar una url de nodo de blockchain y dar click en "Confirmar Transacción" para finalizar la transacción.</div>
             <button type="button" class="close col-md-2" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
 
@@ -128,7 +128,7 @@
             <form id="confirmation_transaction_form">
 
                 <div class="row">
-                  <label class="col-sm-12">Sender Address:</label>
+                  <label class="col-sm-12">Dirección del emisor:</label>
                   <div class="col-sm-12">
                     <input type="text" name="sender_address" id="confirmation_sender_address" rows="2" class="form-control" readonly>
 
@@ -136,21 +136,21 @@
                 </div>
 
                 <div class="row">
-                  <label class="col-sm-12">Recipient Address:</label>
+                  <label class="col-sm-12">Dirección del receptor:</label>
                   <div class="col-sm-12">
                     <input type="text" name="recipient_address" id="confirmation_recipient_address" rows="2" class="form-control" readonly>
                   </div>
                 </div>
                 
                 <div class="row">
-                  <label class="col-sm-12">Amount to Send:</label>
+                  <label class="col-sm-12">Cantidad a enviar:</label>
                   <div class="col-sm-12">
                     <input type="text" name="amount" id="confirmation_amount" rows="2" class="form-control" readonly>
                   </div>
                 </div>
 
                 <div class="row">
-                  <label class="col-sm-12">Transaction Signature:</label>
+                  <label class="col-sm-12">Firma de la transacción:</label>
                   <div class="col-sm-12">
                     <input type="text" name="signature" id="transaction_signature" rows="2" class="form-control" readonly>
                   </div>
@@ -160,8 +160,9 @@
 
 
             <div class="row">
-              <label class="col-sm-12">Blockchain Node URL:</label>
+              <label class="col-sm-12">URL de nodo de Blockchain:</label>
               <div class="col-sm-12">
+                <!-- Observar la dirección IP-->
                 <input type="text" name="node_url" id="node_url" rows="2" class="form-control" value="http://127.0.0.1:5000">
               </div>
             </div>
@@ -169,8 +170,8 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-            <button type="button" id="button_confirm_transaction" class="btn btn-success">Confirm Transaction</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            <button type="button" id="button_confirm_transaction" class="btn btn-success">Confirmar Transacción</button>
           </div>
 
         </div>
@@ -190,8 +191,8 @@
 
           <div class="modal-body">
             <div class="alert alert-success" role="alert">
-              <h4 class="alert-heading">Successful Transaction!</h4>
-              <p>You successfully completed your transaction. It will be added to the next block.</p>
+              <h4 class="alert-heading">Transacción exitosa!</h4>
+              <p>Has completado exitosamente tu transacción. Será añdadida al siguiente blocke.</p>
             </div>
           </div>
 

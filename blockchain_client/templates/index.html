@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blockchain Client</title>
+    <title>G-pool Usuario</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,22 +21,22 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Blockchain Client</a>
+        <a class="navbar-brand" href="#">G-pool Usuario</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">Wallet Generator
+              <a class="nav-link" href="/">Generador de billetera
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/make/transaction">Make Transaction</a>
+              <a class="nav-link" href="/make/transaction">Hacer transacción</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/view/transactions">View Transactions</a>
+              <a class="nav-link" href="/view/transactions">Ver transacciones</a>
             </li>
           </ul>
         </div>
@@ -51,9 +51,9 @@
 
 
           <div class="card-body">
-            <h4 class="card-title">Wallet Generator</h4>
-            <p class="card-text">Click on the button below to generate your blockchain wallet</p>
-            <input type="button" class="btn btn-primary btn-lg" value="Generate Wallet">
+            <h4 class="card-title">Generador de billetera</h4>
+            <p class="card-text">Click en el botón de abajo para generar tu billetera de blockchain</p>
+            <input type="button" class="btn btn-primary btn-lg" value="Generar billetera">
           </div>
 
         </div>
@@ -65,7 +65,7 @@
     <div class="container">
 
         <div class="row">
-          <label class="col-sm-2">Public Key:</label>
+          <label class="col-sm-2">Llave pública:</label>
           <div class="col-sm-10">
             <textarea id="public_key" rows="5" class="form-control" readonly></textarea>
           </div>
@@ -74,7 +74,7 @@
         <br>
         
         <div class="row">
-          <label class="col-sm-2">Private Key:</label>
+          <label class="col-sm-2">Llave privada:</label>
           <div class="col-sm-10">
             <textarea id="private_key" rows="5" class="form-control" readonly></textarea>
           </div>
@@ -85,10 +85,10 @@
         <div class="row" id="warning" style="display:none">
           <div class="col-sm-12">
             <div class="alert alert-danger" role="alert">
-              IMPORTANT
+              IMPORTANTE
               <ul>
-                <li>Save you private and public keys. These keys cannot be recovered!</li>
-                <li>Don't share your private key with anyone!</li>
+                <li>Guarda tu llave pública y privada. Estas llaves no pueden ser recuperadas!</li>
+                <li>No compartas tu llave privada con nadie!</li>
               </ul> 
             </div>
           </div>
