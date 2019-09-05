@@ -345,7 +345,7 @@ if __name__ == '__main__':
     port = args.port
 
     #app.run(host='192.168.26.186', port=port)
-    app.run(host='192.168.1.71', port=port)
+    app.run(host='0.0.0.0', port=port)
 
 
 
