@@ -188,7 +188,7 @@ class Blockchain:
 
     def resolve_conflicts(self):
         """
-        Resolve conflicts between blockchain's nodes
+        Resolve conflicts between blockchain's nodeshttp://localhost:5000/
         by replacing our chain with the longest one in the network.
         """
         neighbours = self.nodes
@@ -318,14 +318,21 @@ def consensus():
     if replaced:
         response = {
             'message': 'Our chain was replaced',
+            'replaced': 'true',
             'new_chain': blockchain.chain
         }
     else:
         response = {
             'message': 'Our chain is authoritative',
+            'replaced': 'false',
             'chain': blockchain.chain
         }
     return jsonify(response), 200
+
+
+@app.route('/new_chain', methods=['GET'])
+def cadena():
+    return render_template('./tabla_transacciones.html')
 
 
 @app.route('/nodes/get', methods=['GET'])
