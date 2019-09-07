@@ -68,8 +68,15 @@
         <br>
 
         <div class="row">
-          <div class="col-lg-12 text-center">
+
+          <div class="col-lg-6 text-center">
+              <input type="button" id="search_nodes" class="btn btn-success btn-lg" value="Buscar nodos en red">
+          </div>
+          <div class="col-lg-6 text-center">
             <input type="button" id="add_node_button" class="btn btn-primary btn-lg" value="Añadir nodo">
+          </div>
+          <div class="col-lg-6 text-center" id="carga">
+              
           </div>
         </div>
       </form>
@@ -147,6 +154,20 @@
             console.log(error);
           }
         });
+
+
+        $("#search_nodes").click(function (){
+          $("#carga").html("<h1>Cargando nodos</h1>")
+          $.ajax({
+            url: '/search_nodes',
+            type: 'GET',
+            success: function(response){
+              window.location.reload()
+            }
+          });
+        });
+
+        
 
 
       })
