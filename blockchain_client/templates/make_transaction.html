@@ -159,13 +159,13 @@
             </form>
 
 
-            <div class="row">
+            <!-- <div class="row">
               <label class="col-sm-12">URL de nodo de Blockchain:</label>
               <div class="col-sm-12">
-                <!-- Observar la dirección IP-->
+                Observar la dirección IP
                 <input type="text" name="node_url" id="node_url" rows="2" class="form-control" value="http://127.0.0.1:5000">
               </div>
-            </div>
+            </div> -->
 
           </div>
 
@@ -244,33 +244,50 @@
           $("#button_confirm_transaction").click(function () {
             //console.log($('#confirmation_transaction_form').serialize());
 
-
             $.ajax({
-              url: document.getElementById("node_url").value + "/transactions/new",
-              type: "POST",
-              headers: {'Access-Control-Allow-Origin':'*'},
-              dataType : 'json',
-              data: $('#confirmation_transaction_form').serialize(),
+              url: "http://localhost:5000/nodes/get",
+              type: "GET",
               success: function(response){
-
-                //reset both forms
-                $("#transaction_form")[0].reset();
-                $("#confirmation_transaction_form")[0].reset();
                 
-                //clean text boxes
-                $("#sender_address").val("");
-                $("#sender_private_key").val("");
-                $("#recipient_address").val("");
-                $("#amount").val("");
+                response["nodes"].forEach(element => {
+                  console.log("peticion enviada a: "+ element)
 
-                $("#basicModal").modal('hide');
-                $("#success_transaction_modal").modal('show');
-                
+                  $.ajax({
+                    url: "http://" + element + "/transactions/new",
+                    type: "POST",
+                    headers: {'Access-Control-Allow-Origin':'*'},
+                    dataType : 'json',
+                    data: $('#confirmation_transaction_form').serialize(),
+                    success: function(response){
+
+                      //reset both forms
+                      $("#transaction_form")[0].reset();
+                      $("#confirmation_transaction_form")[0].reset();
+                      
+                      //clean text boxes
+                      $("#sender_address").val("");
+                      $("#sender_private_key").val("");
+                      $("#recipient_address").val("");
+                      $("#amount").val("");
+
+                      $("#basicModal").modal('hide');
+                      $("#success_transaction_modal").modal('show');
+                      
+                    },
+                    error: function(error){
+                      console.log(error);
+                    }
+                  });
+                });
+
               },
               error: function(error){
-                console.log(error);
+                console.log(error)
               }
-            });
+            })
+
+
+            
 
           });
       });

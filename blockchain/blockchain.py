@@ -254,6 +254,7 @@ def new_transaction():
 		response = {'message': 'Transaction will be added to Block '+ str(transaction_result)}
 		return jsonify(response), 201
 
+
 @app.route('/transactions/get', methods=['GET'])
 def get_transactions():
 	#Get transactions from transactions pool
@@ -262,6 +263,7 @@ def get_transactions():
 	response = {'transactions': transactions}
 	return jsonify(response), 200
 
+
 @app.route('/chain', methods=['GET'])
 def full_chain():
 	response = {
@@ -269,6 +271,7 @@ def full_chain():
 		'length': len(blockchain.chain),
 	}
 	return jsonify(response), 200
+	
 
 @app.route('/mine', methods=['GET'])
 def mine():
@@ -355,10 +358,12 @@ def buscar():
 
 	for i in range(255):
 		try:
-			response = requests.get('http://'+ip_mask+'.'+str(i)+':5000/estoy_vivo', timeout=0.02)
+			response = requests.get('http://'+ip_mask+'.'+str(i)+':5000', timeout=0.02)
+			print("Encontró la ip")
 			blockchain.register_node(ip_mask+'.'+str(i)+':5000')
-		except:
-			print('ip muerta '+ str(i))
+			print("Ingresada la ip")
+		except Exception as e:
+			print('ip muerta '+ str(i) + " " + str(e))
 
 	return "listo"
 
